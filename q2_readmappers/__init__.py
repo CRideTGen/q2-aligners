@@ -15,3 +15,5 @@
 # from q2_readmappers.actions.reference_index import bwa_build, bowtie2_build
 #
 # __all__ = ["bwa_build", "bowtie2_build"]
+from . import _version
+__version__ = _version.get_versions()['version']
