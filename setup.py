@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import versioneer
 setup(
-    name='q2-bwa',
+    name='q2-readmappers',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     packages=find_packages(),

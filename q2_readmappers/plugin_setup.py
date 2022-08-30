@@ -13,23 +13,22 @@
 #   limitations under the License.
 
 
-from q2_nasp2_types.formats import SAMFileFormat
-from q2_nasp2_types.types import BWAIndex, SAMFile
-from q2_types.feature_data import FeatureData, Sequence, PairedEndSequence
+from q2_nasp2_types.types import BWAIndex
+from q2_types.feature_data import FeatureData, Sequence, AlignedSequence
 from q2_types.per_sample_sequences import SequencesWithQuality, PairedEndSequencesWithQuality
 from q2_types.sample_data import SampleData
 from qiime2.plugin import Plugin
 
-from q2_bwa.actions.mem import mem_single, mem_paired
-from q2_bwa.actions.reference_index import index
+import q2_readmappers
+from q2_readmappers.actions import bwa
 
 plugin = Plugin(name='readmappers',
-                version='0.0.1',
+                version=q2_readmappers.__version__,
                 package='q2_readmappers',
                 website='https://github.com/CRideTGen/q2-readmappers')
 
 plugin.methods.register_function(
-    function=index,
+    function=bwa.index,
     inputs={'sequences': FeatureData[Sequence]},
     parameters={},
     outputs=[('database', BWAIndex)],
@@ -43,12 +42,12 @@ plugin.methods.register_function(
 )
 
 plugin.methods.register_function(
-    function=mem_single,
+    function=bwa.mem_single,
     inputs={'sequences': SampleData[SequencesWithQuality],
             'ref_genome': BWAIndex
             },
     parameters={},
-    outputs=[('output_sams', SAMFile)],
+    outputs=[('output_sams', FeatureData[AlignedSequence])],
     input_descriptions={
         'sequences': 'Reference sequences used to build bowtie2 index.',
     'ref_genome': ''},
@@ -59,12 +58,12 @@ plugin.methods.register_function(
 )
 
 plugin.methods.register_function(
-    function=mem_paired,
+    function=bwa.mem_paired,
     inputs={'sequences': SampleData[PairedEndSequencesWithQuality],
             'ref_genome': BWAIndex
             },
     parameters={},
-    outputs=[('output_sams', SAMFile)],
+    outputs=[('output_sams', FeatureData[AlignedSequence])],
     input_descriptions={
         'sequences': 'Reference sequences used to build bowtie2 index.',
         'ref_genome': 'BWA reference genome index'

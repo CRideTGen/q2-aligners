@@ -12,7 +12,3 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-from q2_bwa.actions.reference_index import index
-from q2_bwa.actions.mem import mem_single
-
-__all__ = ["index", "mem_single"]
