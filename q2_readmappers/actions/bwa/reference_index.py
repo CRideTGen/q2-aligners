@@ -1,11 +1,8 @@
 import subprocess
 from pathlib import Path
 
-from q2_nasp2_types.formats import BWAIndexDirFmt
+from q2_nasp2_types.types import BWAIndexDirFmt
 from q2_types.feature_data import DNAFASTAFormat
-
-
-
 
 
 def index(sequences: DNAFASTAFormat) -> BWAIndexDirFmt:

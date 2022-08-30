@@ -1,0 +1,7 @@
+sample-id	forward-absolute-filepath	reverse-absolute-filepath
+TG1401821	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1401821_R067_NTC_1_1.fastq	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1401821_R067_NTC_1_2.fastq
+TG1401822	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1401822_R067_NTC_2_1.fastq	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1401822_R067_NTC_2_2.fastq
+TG1401915	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1401915_R068_NTC_1_1.fastq	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1401915_R068_NTC_1_2.fastq
+TG1401916	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1401916_R068_NTC_2_1.fastq	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1401916_R068_NTC_2_2.fastq
+TG1402009	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1402009_R069_NTC_1_1.fastq	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1402009_R069_NTC_1_2.fastq
+TG1402010	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1402010_R069_NTC_2_1.fastq	/home/cridenour/tmp/test_data/sequences/CONTROL_TG1402010_R069_NTC_2_2.fastq

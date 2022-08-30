@@ -13,8 +13,8 @@
 #   limitations under the License.
 
 
-from q2_nasp2_types.types import BWAIndex
-from q2_types.feature_data import FeatureData, Sequence, AlignedSequence
+from q2_nasp2_types.types import BWAIndex, AlignedReads
+from q2_types.feature_data import FeatureData, Sequence
 from q2_types.per_sample_sequences import SequencesWithQuality, PairedEndSequencesWithQuality
 from q2_types.sample_data import SampleData
 from qiime2.plugin import Plugin
@@ -47,7 +47,7 @@ plugin.methods.register_function(
             'ref_genome': BWAIndex
             },
     parameters={},
-    outputs=[('output_sams', FeatureData[AlignedSequence])],
+    outputs=[('output_sams', FeatureData[AlignedReads])],
     input_descriptions={
         'sequences': 'Reference sequences used to build bowtie2 index.',
     'ref_genome': ''},
@@ -63,7 +63,7 @@ plugin.methods.register_function(
             'ref_genome': BWAIndex
             },
     parameters={},
-    outputs=[('output_sams', FeatureData[AlignedSequence])],
+    outputs=[('output_sams', FeatureData[AlignedReads])],
     input_descriptions={
         'sequences': 'Reference sequences used to build bowtie2 index.',
         'ref_genome': 'BWA reference genome index'
