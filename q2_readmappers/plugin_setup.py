@@ -11,9 +11,10 @@
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
+import importlib
 
-
-from q2_nasp2_types.types import BWAIndex, AlignedReads
+from q2_nasp2_types.index import BWAIndex
+from q2_nasp2_types.alignment import AlignedReads
 from q2_types.feature_data import FeatureData, Sequence
 from q2_types.per_sample_sequences import SequencesWithQuality, PairedEndSequencesWithQuality
 from q2_types.sample_data import SampleData
@@ -50,7 +51,7 @@ plugin.methods.register_function(
     outputs=[('output_sams', FeatureData[AlignedReads])],
     input_descriptions={
         'sequences': 'Reference sequences used to build bowtie2 index.',
-    'ref_genome': ''},
+        'ref_genome': ''},
     parameter_descriptions={},
     output_descriptions={'output_sams': 'Bowtie2 index.'},
     name='Build bowtie2 index from reference sequences.',
@@ -59,14 +60,12 @@ plugin.methods.register_function(
 
 plugin.methods.register_function(
     function=bwa.mem_paired,
-    inputs={'sequences': SampleData[PairedEndSequencesWithQuality],
-            'ref_genome': BWAIndex
+    inputs={'sequences': SampleData[PairedEndSequencesWithQuality]
             },
     parameters={},
     outputs=[('output_sams', FeatureData[AlignedReads])],
     input_descriptions={
-        'sequences': 'Reference sequences used to build bowtie2 index.',
-        'ref_genome': 'BWA reference genome index'
+        'sequences': 'Reference sequences used to build bowtie2 index.'
     },
     parameter_descriptions={},
     output_descriptions={'output_sams': 'Bowtie2 index.'},

@@ -17,3 +17,4 @@
 # __all__ = ["bwa_build", "bowtie2_build"]
 from . import _version
 __version__ = _version.get_versions()['version']
+

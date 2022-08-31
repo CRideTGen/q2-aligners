@@ -1,7 +1,7 @@
 import subprocess
 from pathlib import Path
 
-from q2_nasp2_types.types import BWAIndexDirFmt
+from q2_nasp2_types.index import BWAIndexDirFmt
 from q2_types.feature_data import DNAFASTAFormat
 
 
