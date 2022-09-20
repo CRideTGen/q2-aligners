@@ -20,12 +20,12 @@ from q2_types.per_sample_sequences import SequencesWithQuality, PairedEndSequenc
 from q2_types.sample_data import SampleData
 from qiime2.plugin import Plugin
 
-import q2_readmappers
-from q2_readmappers.actions import bwa
+import q2_aligners
+from q2_aligners.actions import bwa
 
 plugin = Plugin(name='readmappers',
-                version=q2_readmappers.__version__,
-                package='q2_readmappers',
+                version=q2_aligners.__version__,
+                package='q2_aligners',
                 website='https://github.com/CRideTGen/q2-readmappers')
 
 plugin.methods.register_function(

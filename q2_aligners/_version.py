@@ -44,8 +44,8 @@ def get_config():
     cfg.VCS = "git"
     cfg.style = "pep440"
     cfg.tag_prefix = ""
-    cfg.parentdir_prefix = "q2-readmappers"
-    cfg.versionfile_source = "q2_readmappers/_version.py"
+    cfg.parentdir_prefix = "q2-aligners"
+    cfg.versionfile_source = "q2_aligners/_version.py"
     cfg.verbose = False
     return cfg
 
