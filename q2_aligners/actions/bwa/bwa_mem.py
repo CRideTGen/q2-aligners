@@ -32,7 +32,7 @@ config = Config(
 parsl.clear()
 parsl.load(config)
 
-
+#get
 @bash_app
 def bwa_mem_align_single():
     pass
