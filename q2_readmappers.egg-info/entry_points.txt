@@ -1,2 +1,0 @@
-[qiime2.plugins]
-q2-readmappers = q2_readmappers.plugin_setup:plugin

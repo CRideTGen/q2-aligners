@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/q2-aligners.iml" filepath="$PROJECT_DIR$/.idea/q2-aligners.iml" />
       <module fileurl="file://$PROJECT_DIR$/q2-bowtie2/.idea/q2-bowtie2.iml" filepath="$PROJECT_DIR$/q2-bowtie2/.idea/q2-bowtie2.iml" />
       <module fileurl="file://$PROJECT_DIR$/q2-bwa/.idea/q2-bwa.iml" filepath="$PROJECT_DIR$/q2-bwa/.idea/q2-bwa.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/q2-readmappers.iml" filepath="$PROJECT_DIR$/.idea/q2-readmappers.iml" />
     </modules>
   </component>
 </project>

@@ -1,46 +1,11 @@
-import pathlib
 import subprocess
 from pathlib import Path
 
 import pandas as pd
-import parsl
-from parsl.app.app import bash_app
-from parsl.channels import LocalChannel
-from parsl.config import Config
-from parsl.executors import HighThroughputExecutor
-from parsl.providers import LocalProvider
 from q2_nasp2_types.alignment import SAMFileDirFmt
-from q2_nasp2_types.index import BWAIndex, BWAIndexDirFmt
+from q2_nasp2_types.index import BWAIndex
 from q2_types.per_sample_sequences import SingleLanePerSamplePairedEndFastqDirFmt, \
     SingleLanePerSampleSingleEndFastqDirFmt
-
-config = Config(
-    executors=[
-        HighThroughputExecutor(
-            label="htex_Local",
-            worker_debug=True,
-            cores_per_worker=1,
-            provider=LocalProvider(
-                channel=LocalChannel(),
-                init_blocks=1,
-                max_blocks=1,
-            ),
-        )
-    ],
-)
-
-parsl.clear()
-parsl.load(config)
-
-#get
-@bash_app
-def bwa_mem_align_single():
-    pass
-
-
-@bash_app
-def bwa_mem_align_paired(forward, reverse, reference, output_sam):
-    return f"bwa mem {reference} {forward} {reverse} > {output_sam}"
 
 
 def mem_single(sequences: SingleLanePerSampleSingleEndFastqDirFmt, ref_genome: BWAIndex) -> SAMFileDirFmt:

@@ -11,10 +11,9 @@
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
-import importlib
 
-from q2_nasp2_types.index import BWAIndex
 from q2_nasp2_types.alignment import AlignedReads
+from q2_nasp2_types.index import BWAIndex
 from q2_types.feature_data import FeatureData, Sequence
 from q2_types.per_sample_sequences import SequencesWithQuality, PairedEndSequencesWithQuality
 from q2_types.sample_data import SampleData
